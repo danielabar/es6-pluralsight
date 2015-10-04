@@ -1,3 +1,4 @@
+/*eslint quotes:0*/
 System.config({
   baseURL: "/",
   defaultJSExtensions: true,
@@ -10,7 +11,11 @@ System.config({
   },
   paths: {
     "github:*": "jspm_packages/github/*",
-    "npm:*": "jspm_packages/npm/*"
+    "npm:*": "jspm_packages/npm/*",
+    "babel": "node_modules/babel-core/browser.js",
+    "es6-module-loader": "node_modules/es6-module-loader/dist/es6-module-loader.js",
+    "systemjs": "node_modules/systemjs/dist/system.js",
+    "system-polyfills": "node_modules/systemjs/dist/system-polyfills.js"
   },
 
   map: {

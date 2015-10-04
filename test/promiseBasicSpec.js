@@ -1,5 +1,5 @@
 /*eslint no-unused-vars:0*/
-describe('Promises', () => {
+describe('Promises Basic', () => {
 
   it('Executes the callback given to then', done => {
     var promise = new Promise( (resolve, reject) => {

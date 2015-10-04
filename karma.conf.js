@@ -8,13 +8,43 @@ module.exports = function(config) {
     basePath: '',
 
 
+    // Plugins to load
+    plugins: [
+      'karma-babel-preprocessor',
+      'karma-systemjs',
+      'karma-jasmine',
+      'karma-chrome-launcher'
+    ],
+
+
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['systemjs', 'jasmine'],
+
+
+    // https://github.com/rolaveric/karma-systemjs
+    systemjs: {
+      // Path to your SystemJS configuration file
+      configFile: 'config.js',
+
+      // Patterns for files that you want Karma to make available, but not loaded until a module requests them. eg. Third-party libraries.
+      serveFiles: [ ],
+
+      // SystemJS configuration specifically for tests, added after your config file.
+      // Good for adding test libraries and mock modules
+      config: {
+        // paths: {
+        //   'angular-mocks': 'bower_components/angular-mocks/angular-mocks.js'
+        // }
+      }
+    },
 
 
     // list of files / patterns to load in the browser
     files: [
+      'src/*.js',
+      'src/**/*.js',
+      'test/*Spec.js',
       'test/**/*Spec.js'
     ],
 
@@ -27,7 +57,8 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'test/**/*.js': ['babel']
+      'src/**/*.js': ['babel'],
+      'test/**/*Spec.js': ['babel']
     },
 
 
