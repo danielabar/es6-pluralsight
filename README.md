@@ -17,9 +17,33 @@ karma start
 
 ## Destructuring
 
+[Examples](test/destructuringSpec.js)
+
 Operation for assigning values to a _set_ of variables.
 
-[Array Examples](test/destructuringSpec.js)
+## Default Parameter Values
+
+[Examples](test/defaultParamsSpec.js)
+
+To solve the problem of not enough parameters provided to a function.
+ES5 solution was:
+
+```javascript
+var doWork = function(name) {
+  name = name || 'Scott';
+  // do something with name...
+};
+```
+
+In ES6, can have an expression as a parameter to provide a default value:
+
+```javascript
+let doWork = function(name='Scott') {
+  // do something with name...
+};
+```
+
+The default assignment will only be applied if no value is supplied or explicitly `undefined`.
 
 ## Promises
 
