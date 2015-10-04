@@ -23,7 +23,10 @@
         ]
     },
     "globals": {
-      "console": false
+      "console": false,
+      "describe": false,
+      "it": false,
+      "expect": false
     },
     "env": {
         "es6": true,

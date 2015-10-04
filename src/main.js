@@ -9,3 +9,11 @@ foo();
 
 createPromise();
 passData();
+
+describe('Promises', () => {
+
+  it('Does something', () => {
+    expect(true).toBe(true);
+  });
+
+});
