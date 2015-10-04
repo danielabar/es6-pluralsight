@@ -4,18 +4,16 @@ Notes and code examples written in ES6, from [JavaScript Fundamentals for ES6](h
 
 ## Setup
 
-This project is setup to use Babel, JSPM and SystemJS.
+This project is setup to use Babel, JSPM and SystemJS, with Karma to run the tests.
 
 To run the code examples, clone this repo, then `cd` into project directory and:
 
 ```
 npm install
 jspm install
-npm install -g http-server
-http-server
+npm install -g karma-cli
+karma start
 ```
-
-Browse to [http://localhost:8080/](http://localhost:8080/) and check console output.
 
 ## Promises
 
