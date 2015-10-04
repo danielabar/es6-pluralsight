@@ -19,7 +19,7 @@ karma start
 
 Operation for assigning values to a _set_ of variables.
 
-[Array Examples](test/destructuringArraySpec.js)
+[Array Examples](test/destructuringSpec.js)
 
 ## Promises
 
