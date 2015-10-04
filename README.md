@@ -45,6 +45,22 @@ let doWork = function(name='Scott') {
 
 The default assignment will only be applied if no value is supplied or explicitly `undefined`.
 
+## Rest Parameters
+
+[Examples](test/restParameterSpec.js)
+
+Make it easy to work with a variable or unknown number of arguments in a function.
+
+For example, to write a sum function, want to allow caller to provide as many or as little arguments
+representing the numbers to be summed.
+
+ES5 solution was to use implicit `arguments` object,
+which holds all of the arguments passed to a function in an array-like structure.
+Problem with `arguments` is it looks like an array but isn't truly an array.
+
+ES6 solution is to use REST parameter syntax. Rest parameter is always the last parameter in a function,
+and will have `...` prefix. The values will be packaged into a true array object.
+
 ## Promises
 
 [Examples](test/promiseSpec.js)
