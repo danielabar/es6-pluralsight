@@ -12,3 +12,13 @@ export function getCompany(companyId) {
   console.log(`Retrieving company: ${companyId}`);
   return Promise.resolve({name:'Pluralsight'});
 }
+
+export function getCourse(courseId) {
+  console.log(`Retrieving course: ${courseId}`);
+  var courses = {
+    1: {name: 'Introduction to Cobol'},
+    2: {name: 'Yet Another C# Course'},
+    3: {name: 'How to make billions by logging'}
+  };
+  return Promise.resolve(courses[courseId]);
+}
