@@ -31,11 +31,11 @@ module.exports = function(config) {
     },
 
 
-    babelPreprocessor: {
-      options: {
-        sourceMap: 'inline'
-      }
-    },
+    // babelPreprocessor: {
+    //   options: {
+    //     sourceMap: 'inline'
+    //   }
+    // },
 
 
     // test results reporter to use
@@ -69,5 +69,5 @@ module.exports = function(config) {
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false
-  })
-}
+  });
+};

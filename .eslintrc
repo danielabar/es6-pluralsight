@@ -26,11 +26,14 @@
       "console": false,
       "describe": false,
       "it": false,
-      "expect": false
+      "expect": false,
+      "fail": false,
+      "module": false
     },
     "env": {
         "es6": true,
-        "browser": true
+        "browser": true,
+        "node": true
     },
   "extends": "eslint:recommended"
 }

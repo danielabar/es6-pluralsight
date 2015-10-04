@@ -17,6 +17,8 @@ karma start
 
 ## Promises
 
+[Code](test/promiseSpec.js)
+
 A promise is an object which represents a handle to listen to the results of the async operation,
 whether it succeeds or fails. The promise "promises" to alert the caller when the async operation is done,
 and provide the results of the operation.
