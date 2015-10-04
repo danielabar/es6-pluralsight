@@ -1,7 +1,7 @@
 {
   "parser": "babel-eslint",
     "rules": {
-      "strict" : 0,
+      "strict" : 2,
         "indent": [
             2,
             2
@@ -28,7 +28,10 @@
       "it": false,
       "expect": false,
       "fail": false,
-      "module": false
+      "module": false,
+      "jasmine": false,
+      "beforeEach": false,
+      "afterEach": false
     },
     "env": {
         "es6": true,

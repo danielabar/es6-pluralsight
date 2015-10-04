@@ -15,9 +15,15 @@ npm install -g karma-cli
 karma start
 ```
 
+## Destructuring
+
+Operation for assigning values to a _set_ of variables.
+
+[Examples](test/destructuringSpec.js)
+
 ## Promises
 
-[Code](test/promiseSpec.js)
+[Examples](test/promiseSpec.js)
 
 A promise is an object which represents a handle to listen to the results of the async operation,
 whether it succeeds or fails. The promise "promises" to alert the caller when the async operation is done,
@@ -59,3 +65,8 @@ function getCompanyFromOrderId(orderId) {
   });
 }
 ```
+
+## Generators
+
+When a `yield` statement is encountered inside of a generator function,
+execution is paused at that point, until the yield statement returns.
