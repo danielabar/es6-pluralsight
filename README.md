@@ -61,6 +61,13 @@ Problem with `arguments` is it looks like an array but isn't truly an array.
 ES6 solution is to use REST parameter syntax. Rest parameter is always the last parameter in a function,
 and will have `...` prefix. The values will be packaged into a true array object.
 
+## Spread Operator
+
+[Examples](test/spreadOperatorSpec.js)
+
+Similar to rest parameters in that the spread operator also uses `...`,
+but when used outside of a function argument list, it means "spread" an array across individual parameters.
+
 ## Promises
 
 [Examples](test/promiseSpec.js)
