@@ -1,3 +1,5 @@
+'use strict';
+
 export function getOrder(orderId) {
   console.log(`Retrieving order: ${orderId}`);
   return Promise.resolve({userId:35});

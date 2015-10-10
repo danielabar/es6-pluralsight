@@ -1,7 +1,8 @@
 {
   "parser": "babel-eslint",
     "rules": {
-      "strict" : 2,
+      "no-global-strict" : 0,
+      "strict" : 0,
         "indent": [
             2,
             2

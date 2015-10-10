@@ -2,6 +2,7 @@ import {getOrder, getUser, getCompany, getCourse} from 'src/promiseAdvanced';
 
 /*eslint no-unused-vars:0*/
 describe('Promises Advanced', () => {
+  'use strict';
 
   it('Chains sequentially using then', done => {
     getOrder(3).then( order => {
