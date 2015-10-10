@@ -1,3 +1,21 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Learning ES6 with Pluralsight](#learning-es6-with-pluralsight)
+  - [Setup](#setup)
+  - [Variables and Parameters](#variables-and-parameters)
+    - [Destructuring](#destructuring)
+    - [Default Parameter Values](#default-parameter-values)
+    - [Rest Parameters](#rest-parameters)
+    - [Spread Operator](#spread-operator)
+    - [Template Literals](#template-literals)
+  - [Asynchronous Development](#asynchronous-development)
+    - [Promises](#promises)
+    - [Generators](#generators)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Learning ES6 with Pluralsight
 
 Notes and code examples written in ES6, from [JavaScript Fundamentals for ES6](http://www.pluralsight.com/courses/javascript-fundamentals-es6)
@@ -15,13 +33,15 @@ npm install -g karma-cli
 karma start
 ```
 
-## Destructuring
+## Variables and Parameters
+
+### Destructuring
 
 [Examples](test/destructuringSpec.js)
 
 Operation for assigning values to a _set_ of variables.
 
-## Default Parameter Values
+### Default Parameter Values
 
 [Examples](test/defaultParamsSpec.js)
 
@@ -45,7 +65,7 @@ let doWork = function(name='Scott') {
 
 The default assignment will only be applied if no value is supplied or explicitly `undefined`.
 
-## Rest Parameters
+### Rest Parameters
 
 [Examples](test/restParameterSpec.js)
 
@@ -61,14 +81,37 @@ Problem with `arguments` is it looks like an array but isn't truly an array.
 ES6 solution is to use REST parameter syntax. Rest parameter is always the last parameter in a function,
 and will have `...` prefix. The values will be packaged into a true array object.
 
-## Spread Operator
+### Spread Operator
 
 [Examples](test/spreadOperatorSpec.js)
 
 Similar to rest parameters in that the spread operator also uses `...`,
 but when used outside of a function argument list, it means "spread" an array across individual parameters.
 
-## Promises
+### Template Literals
+
+[Examples](test/templateLiteralSpec.js)
+
+Can be used to replace string concatenation. For example, instead of this:
+
+```javascript
+let category = 'music';
+let id = 2122;
+
+let url = 'http://apiserver/' + category + '/' + id;
+```
+
+Use a template literal, note use of backticks instead of quotes:
+
+```javascript
+let url = `http://apiserver/${category}/${id}`;
+```
+
+_Substitution placeholders_ are identified with dollar sign and curly braces wrapping a variable name.
+
+## Asynchronous Development
+
+### Promises
 
 [Examples](test/promiseSpec.js)
 
@@ -113,7 +156,7 @@ function getCompanyFromOrderId(orderId) {
 }
 ```
 
-## Generators
+### Generators
 
 When a `yield` statement is encountered inside of a generator function,
 execution is paused at that point, until the yield statement returns.
