@@ -109,6 +109,27 @@ let url = `http://apiserver/${category}/${id}`;
 
 _Substitution placeholders_ are identified with dollar sign and curly braces wrapping a variable name.
 
+## Functional Programming
+
+### Arrow Functions
+
+[Examples](test/arrowFunctionSpec.js)
+
+Concise syntax for defining a block of executable code. Simple example:
+
+```javascript
+let add = (x,y) => x + y;
+expect(add(3,5)).toEqual(8);
+```
+
+The left hand side of arrow specifies the function parameters.
+Parameters are surrounded by parenthesis, if have more than one.
+
+The right hand side of arrow is the function body. This will be executed when function is invoked.
+Note no need for curly braces, `function` keyword, or `return` statement.
+
+Maintains outer `this` context.
+
 ## Asynchronous Development
 
 ### Promises
