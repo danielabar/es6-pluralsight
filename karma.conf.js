@@ -1,53 +1,31 @@
 // Karma configuration
-// Generated on Sun Oct 04 2015 07:22:31 GMT-0400 (EDT)
+// Generated on Fri Dec 05 2014 16:49:29 GMT-0500 (EST)
 
 module.exports = function(config) {
-  'use strict';
-  
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
 
-    // Plugins to load
-    plugins: [
-      'karma-babel-preprocessor',
-      'karma-systemjs',
-      'karma-jasmine',
-      'karma-chrome-launcher'
-    ],
-
-
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['systemjs', 'jasmine'],
+    frameworks: ['jspm', 'jasmine'],
 
-
-    // https://github.com/rolaveric/karma-systemjs
-    systemjs: {
-      // Path to your SystemJS configuration file
-      configFile: 'config.js',
-
-      // Patterns for files that you want Karma to make available, but not loaded until a module requests them. eg. Third-party libraries.
-      serveFiles: [ ],
-
-      // SystemJS configuration specifically for tests, added after your config file.
-      // Good for adding test libraries and mock modules
-      config: {
-        // paths: {
-        //   'angular-mocks': 'bower_components/angular-mocks/angular-mocks.js'
-        // }
+    jspm: {
+      // Edit this to your needs
+      loadFiles: [
+        'src/*.js',
+        'test/*.js'
+      ],
+      paths: {
+        '*': '*.js'
       }
     },
 
 
     // list of files / patterns to load in the browser
     files: [
-      'src/*.js',
-      'src/**/*.js',
-      'test/*Spec.js',
-      'test/**/*Spec.js'
     ],
 
 
@@ -59,17 +37,20 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.js': ['babel'],
-      'test/**/*Spec.js': ['babel']
+      'test/**/*.js': ['babel'],
+      'src/**/*.js': ['babel']
     },
-
-
-    // babelPreprocessor: {
-    //   options: {
-    //     sourceMap: 'inline'
-    //   }
-    // },
-
+    'babelPreprocessor': {
+      options: {
+        sourceMap: 'inline',
+        modules: 'system',
+        moduleIds: false,
+        optional: [
+          "es7.decorators",
+          "es7.classProperties"
+        ]
+      }
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
@@ -78,7 +59,7 @@ module.exports = function(config) {
 
 
     // web server port
-    port: 9876,
+    port: 9877,
 
 
     // enable / disable colors in the output (reporters and logs)

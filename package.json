@@ -1,35 +1,67 @@
 {
-  "jspm": {
-    "devDependencies": {
-      "babel": "npm:babel-core@^5.8.24",
-      "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^1.1.4"
-    }
-  },
   "name": "es6-pluralsight",
   "version": "1.0.0",
   "description": "Learning ES6 with Pluralsight",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "ES6",
-    "ES2015"
+    "ES2015",
+    "education"
   ],
-  "author": "danielabar",
   "license": "MIT",
+  "author": "danielabar",
+  "main": "sourceMap/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielabar/es6-pluralsight"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
   "devDependencies": {
-    "babel-core": "^5.8.25",
     "babel-eslint": "^4.1.3",
-    "es6-module-loader": "^0.17.8",
     "eslint": "^1.6.0",
-    "jasmine-core": "^2.3.4",
-    "karma": "^0.12.37",
-    "karma-babel-preprocessor": "^5.2.2",
-    "karma-chrome-launcher": "^0.2.0",
-    "karma-jasmine": "^0.3.6",
-    "karma-systemjs": "^0.8.0",
-    "systemjs": "^0.19.3"
+    "del": "^1.1.0",
+    "gulp": "^3.8.10",
+    "gulp-babel": "^5.1.0",
+    "gulp-bump": "^0.3.1",
+    "gulp-changed": "^1.1.0",
+    "gulp-jshint": "^1.9.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^0.6.6",
+    "gulp-protractor": "^0.0.12",
+    "gulp-sourcemaps": "^1.3.0",
+    "gulp-yuidoc": "^0.1.2",
+    "jasmine-core": "^2.1.3",
+    "jshint-stylish": "^1.0.0",
+    "karma": "^0.12.28",
+    "karma-babel-preprocessor": "^5.2.1",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-coverage": "^0.3.1",
+    "karma-jasmine": "^0.3.5",
+    "karma-jspm": "2.0.1-beta.2",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "object.assign": "^1.0.3",
+    "phantomjs": "^1.9.18",
+    "require-dir": "^0.1.0",
+    "run-sequence": "^1.0.2",
+    "vinyl-paths": "^1.0.0",
+    "yargs": "^2.1.1"
+  },
+  "jspm": {
+    "dependencies": {
+      "core-js": "npm:core-js@^0.9.4",
+      "fetch": "github:github/fetch@^0.9.0",
+      "zloirock/core-js": "github:zloirock/core-js@^1.2.1"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.6.4",
+      "babel-runtime": "npm:babel-runtime@^5.6.4",
+      "core-js": "npm:core-js@^0.9.4"
+    },
+    "overrides": {
+      "npm:core-js@0.9.18": {
+        "main": "client/shim.min"
+      }
+    }
   }
 }

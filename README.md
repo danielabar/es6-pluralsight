@@ -128,7 +128,23 @@ Parameters are surrounded by parenthesis, if have more than one.
 The right hand side of arrow is the function body. This will be executed when function is invoked.
 Note no need for curly braces, `function` keyword, or `return` statement.
 
-Maintains outer `this` context.
+Arrow functions always capture the `this` value of the context they are inside.
+i.e. arrow functions _lexically bind to this_.
+
+### Iterables and Iterators
+
+[Examples](test/iteratorSpec.js)
+
+An _iterable_ is an object that holds a collection of items (in the abstract sense, any sequence of objects,
+such as array, map, tree etc).
+
+If an object that holds a collection is iterable, then an _iterator_ can be retrieved from it.
+An iterator supports walking through the collection one item at a time, using the `next()` method.
+
+Next returns an object representing the next item in the collection. This object has a `value` and boolean `done` properties. Done is true when there are no more items in the collection.
+
+Iterator can only be used to go one item at a time, doesn't have features such as length property.
+Iterators are lazy.
 
 ## Asynchronous Development
 
