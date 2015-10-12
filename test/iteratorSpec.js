@@ -1,4 +1,5 @@
-describe('Iterables', () => {
+/*eslint no-unused-vars:0*/
+describe('Iterable', () => {
   'use strict';
 
   it('Works with iterators at a low level', () => {
@@ -39,6 +40,54 @@ describe('Iterables', () => {
     }
 
     expect(sum).toEqual(10);
+  });
+
+  it('Built by implementing Symbol.iterator', () => {
+    class Company {
+      constructor() {
+        this.employees = [];
+      }
+
+      addEmployees(...names) {
+        this.employees = this.employees.concat(names);
+      }
+
+      // clients of Company can iterate employees without having a reference to employees array
+      [Symbol.iterator]() {
+        return new ArrayIterator(this.employees);
+      }
+    }
+
+    // this is re-usable for any class that requires an iterator
+    class ArrayIterator {
+      constructor(array) {
+        this.array = array;
+        this.index = 0;
+      }
+
+      next() {
+        var result = {
+          value: undefined,
+          done: true
+        };
+        if (this.index < this.array.length) {
+          this.index += 1;
+          result.value = this.array[this.index];
+          result.done = false;
+        }
+        return result;
+      }
+    }
+
+    let count = 0;
+    let company = new Company();
+    company.addEmployees('Tim', 'Sue', 'John', 'Scott');
+
+    for(let employee of company) {
+      count += 1;
+    }
+
+    expect(count).toEqual(4);
   });
 
 });

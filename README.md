@@ -162,7 +162,7 @@ for(let i of numbers) {
 ```
 
 `for of` is compatible with iterators. Behind the scenes it can call the `next` method and check
-the done flag to determine if iteration is complete.
+the done flag to determine if iteration is complete. It uses `Symbol.iterator` property of object to do so.
 
 ## Asynchronous Development
 
