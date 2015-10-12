@@ -28,7 +28,6 @@ describe('Promises Advanced', () => {
       expect(values.length).toBe(3);
       // Note that we can't assert anything about the sequence of values,
       // don't know which courseId will be in which position in array
-      console.log(JSON.stringify(values));
       done();
     });
   });

@@ -10,6 +10,10 @@
     - [Rest Parameters](#rest-parameters)
     - [Spread Operator](#spread-operator)
     - [Template Literals](#template-literals)
+  - [Functional Programming](#functional-programming)
+    - [Arrow Functions](#arrow-functions)
+    - [Iterables and Iterators](#iterables-and-iterators)
+    - [for of](#for-of)
   - [Asynchronous Development](#asynchronous-development)
     - [Promises](#promises)
     - [Generators](#generators)
@@ -163,6 +167,31 @@ for(let i of numbers) {
 
 `for of` is compatible with iterators. Behind the scenes it can call the `next` method and check
 the done flag to determine if iteration is complete. It uses `Symbol.iterator` property of object to do so.
+
+### Generators
+
+A generator function is a function that generates an iterator. Uses the `yield` keywrod
+and special `function*` syntax.
+
+```javascript
+let numbers = function*() {
+  yield 1;
+  yield 2;
+  yield 3;
+  yield 4;
+}
+```
+
+Instead of using `return` keyword to return a single value, a generator function can use `yield`,
+to return multiple values.
+
+Each time a generator uses `yield`, it _yields_ the thread of execution back to the caller.
+Value is returned to caller with yield _immediately_. Caller can do whatever it needs to with result.
+Then when caller asks generator for next value, thread of execution returns to generator function,
+and it continues where it left off.
+
+Generator functions _suspend_ execution when they yield, then _resume_ later when caller tries to get next value.
+
 
 ## Asynchronous Development
 

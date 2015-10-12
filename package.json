@@ -64,5 +64,8 @@
         "main": "client/shim.min"
       }
     }
+  },
+  "dependencies": {
+    "regenerator": "^0.8.41"
   }
 }
