@@ -1,3 +1,4 @@
+import 'zloirock/core-js';
 import { createPromise, passData } from 'src/async';
 
 export function foo() {

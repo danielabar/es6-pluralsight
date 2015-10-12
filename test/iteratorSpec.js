@@ -1,5 +1,3 @@
-import 'zloirock/core-js';
-
 describe('Iterables', () => {
   'use strict';
 
@@ -29,6 +27,17 @@ describe('Iterables', () => {
       sum += next.value;
       next = iterator.next();
     }
+    expect(sum).toEqual(10);
+  });
+
+  it('for..of works with iterators at a high level', () => {
+    let sum = 0,
+      numbers = [1, 2, 3, 4];
+
+    for (let n of numbers) {
+      sum += n;
+    }
+
     expect(sum).toEqual(10);
   });
 

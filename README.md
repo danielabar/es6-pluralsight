@@ -22,15 +22,15 @@ Notes and code examples written in ES6, from [JavaScript Fundamentals for ES6](h
 
 ## Setup
 
-This project is setup to use Babel, JSPM and SystemJS, with Karma to run the tests.
+This project is setup to use Babel, JSPM and SystemJS, with Karma and Grunt to run the tests.
 
 To run the code examples, clone this repo, then `cd` into project directory and:
 
 ```
 npm install
 jspm install
-npm install -g karma-cli
-karma start
+npm install -g grunt-cli
+grunt tdd
 ```
 
 ## Variables and Parameters
@@ -145,6 +145,24 @@ Next returns an object representing the next item in the collection. This object
 
 Iterator can only be used to go one item at a time, doesn't have features such as length property.
 Iterators are lazy.
+
+### for of
+
+JavaScript has always had `for...in` loop, which works by enumerating the properties of an object.
+It can be used on arrays (enumerates array index) or objects (enumerates object keys).
+
+`for of` is a new looping syntax supports iterating over _values_, and not having to
+worry about the keys or indexes.
+
+```javascript
+let numbers = [1, 2, 3, 4];
+for(let i of numbers) {
+  console.log(i);
+}
+```
+
+`for of` is compatible with iterators. Behind the scenes it can call the `next` method and check
+the done flag to determine if iteration is complete.
 
 ## Asynchronous Development
 
