@@ -23,16 +23,13 @@ describe('Iterables', () => {
 
     // iterator
     sum = 0;
-    let mytest = numbers.values();
-    console.log(`=== my test iterator: ${mytest}`);
-    // let next = iterator.next();
-    // while(!next.done) {
-    //   sum += next.value;
-    //   next = iterator.next();
-    // }
-    //
-    // expect(sum).toEqual(10);
-
+    let iterator = numbers.values();
+    let next = iterator.next();
+    while (!next.done) {
+      sum += next.value;
+      next = iterator.next();
+    }
+    expect(sum).toEqual(10);
   });
 
 });
