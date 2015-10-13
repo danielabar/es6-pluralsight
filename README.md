@@ -172,7 +172,7 @@ the done flag to determine if iteration is complete. It uses `Symbol.iterator` p
 ### Generators
 
 [Simple Examples](test/generatorSpec.js)
-[Functional Examples](test/generatorExampleSpec.js)
+[Functional Examples](test/generatorFunctional.js)
 
 A generator function is a function that generates an iterator. Uses the `yield` keywrod
 and special `function*` syntax.

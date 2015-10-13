@@ -1,6 +1,6 @@
 import {Company} from '../src/generatorExample';
 
-describe('Generator Example', () => {
+describe('Functional generators', () => {
 
   it('Iterates company employees', () => {
     let count = 0;
@@ -58,7 +58,31 @@ describe('Generator Example', () => {
     }
 
     expect(count).toEqual(1);
+  });
 
+  it('Can take a parameter from next(param)', () => {
+
+    // Generator function that will yield the values between start and end inclusive
+    let range = function*(start, end) {
+      let current = start;
+      while (current <= end) {
+        // this works because caller did: iterator.next(2), therefore delta = 2
+        let delta = yield current;
+        current += delta || 1 ;
+      }
+    };
+
+    let result = [];
+    let iterator = range(1, 10);
+    let next = iterator.next();
+    while(!next.done) {
+      result.push(next.value);
+      // can pass a parameter into next
+      // value passed in can influence the state of the generator
+      next = iterator.next(2);
+    }
+
+    expect(result).toEqual([1, 3, 5, 7, 9]);
   });
 
 });
