@@ -15,6 +15,9 @@
     - [Iterables and Iterators](#iterables-and-iterators)
     - [for of](#for-of)
     - [Generators](#generators)
+    - [Comprehensions](#comprehensions)
+      - [Array Comprehensions](#array-comprehensions)
+      - [Generator Comprehension](#generator-comprehension)
   - [Asynchronous Development](#asynchronous-development)
     - [Promises](#promises)
     - [Generators](#generators-1)
@@ -201,6 +204,57 @@ i.e. functions that take in other functions as arguments.
 
 Generator function exhibits _lazy evaluation_, which is very useful for functional programming.
 For example, to filter a collection...
+
+### Comprehensions
+
+Comprehensions are a compact and declarative syntax for building arrays and generators.
+
+#### Array Comprehensions
+
+Array comprehension are expressions built inside of square brackets:
+
+```javascript
+var numbers = [for (n of [1, 2, 3]) n * n];
+expect(numbers).toEqual([1, 4, 9]);
+```
+
+Looks like `for of` statment. Variable `n` represents each item from some collection.
+In above example, collection is array literal `[1, 2, 3]`, but it could be any iterable object.
+
+`let` keyword is not needed when defining variable `n` because it's implied.
+`n` is scoped to the inside of the comprehension expression.
+
+After the `for of` is the value that should be computed for each `n`, in above example, `n * n`.
+
+The example above is equivalent to writing this for loop:
+
+```javascript
+let numbers = [];
+for (let n of [1,2,3]) {
+  numbers.push(n * n);
+}
+expect(numbers).toEqual([1, 4, 9]);
+```
+
+A _predicate_ can be used to filter values:
+
+```javascript
+var numbers = [for (n of [1, 2, 3]) if(n > 1) n * n];
+expect(numbers).toEqual([4, 9]);
+```
+
+Array comprehension is _greedy_. It will immediately build the entire array as a concrete data structure.
+
+#### Generator Comprehension
+
+Generator comprehension uses paranethesis instead of square brackets.
+
+In the example below, numbers2 is NOT an array, its a generator that allows us to evaluate lazily.
+
+```javascript
+var numbers2 = (for (n of [1,2,3]) n * n);
+expect(Array.from(numbers2)).toEqual([1,4,9]);
+```
 
 ## Asynchronous Development
 
