@@ -14,9 +14,10 @@
     - [Arrow Functions](#arrow-functions)
     - [Iterables and Iterators](#iterables-and-iterators)
     - [for of](#for-of)
+    - [Generators](#generators)
   - [Asynchronous Development](#asynchronous-development)
     - [Promises](#promises)
-    - [Generators](#generators)
+    - [Generators](#generators-1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -192,6 +193,11 @@ and it continues where it left off.
 
 Generator functions _suspend_ execution when they yield, then _resume_ later when caller tries to get next value.
 
+Iterators and generators support building functions that _compose_ together.
+i.e. functions that take in other functions as arguments.
+
+Generator function exhibits _lazy evaluation_, which is very useful for functional programming.
+For example, to filter a collection...
 
 ## Asynchronous Development
 
