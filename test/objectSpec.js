@@ -28,7 +28,6 @@ describe('object', () => {
   });
 
   describe('assign function', () => {
-
     it('applies mixins to objects', () => {
       let shark = {
         bite: function(target) {
@@ -55,6 +54,69 @@ describe('object', () => {
 
       shark.pewpew(person);
       expect(person.exploded).toBe(true);
+    });
+  });
+
+  describe('property initializer shorthand', () => {
+    it('creates properties', () => {
+      let model = 'Ford',
+        year = 1969;
+
+      let classic = {
+        model,
+        year
+      };
+
+      expect(classic.model).toEqual('Ford');
+      expect(classic.year).toEqual(1969);
+    });
+  });
+
+  describe('method initializer shorthand', () => {
+    it('creates methods using shorthand', () => {
+      let server = {
+        getPort() {
+          return 8080;
+        }
+      };
+
+      expect(server.getPort()).toEqual(8080);
+    });
+  });
+
+  describe('computed property names', () => {
+
+    it('supports variables for property names', () => {
+      function createSimpleObject(propName, propVal) {
+        // square brackets allow expressions to be passed for proerty name
+        return {
+          [propName]:propVal
+        };
+      }
+      let foo = createSimpleObject('size', 'small');
+
+      expect(foo.hasOwnProperty('size')).toBe(true);
+      expect(foo.size).toEqual('small');
+    });
+
+    it('supports template strings or string concatenation', () => {
+      function createTriumvirate(first, second, third) {
+        return {
+          [`member_${first.name}`]:first,
+          [`member_${second.name}`]:second,
+          [`member_${third.name}`]:third
+        };
+      }
+
+      let joe = {name: 'Joe'},
+        ralph = {name: 'Ralph'},
+        harry = {name: 'Harry'};
+
+      let council = createTriumvirate(joe, ralph, harry);
+
+      expect(council.member_Joe).toBe(joe);
+      expect(council.member_Ralph).toBe(ralph);
+      expect(council.member_Harry).toBe(harry);
     });
 
   });
