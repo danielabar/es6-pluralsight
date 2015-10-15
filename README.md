@@ -249,7 +249,7 @@ Array comprehension is _greedy_. It will immediately build the entire array as a
 
 #### Generator Comprehension
 
-Generator comprehension uses paranethesis instead of square brackets.
+Generator comprehension uses parentheses instead of square brackets.
 
 In the example below, numbers2 is NOT an array, its a generator that allows us to evaluate lazily.
 
@@ -257,6 +257,8 @@ In the example below, numbers2 is NOT an array, its a generator that allows us t
 var numbers2 = (for (n of [1,2,3]) n * n);
 expect(Array.from(numbers2)).toEqual([1,4,9]);
 ```
+
+A lot of `for of` statements are candidates for being re-written in the comprehension syntax.
 
 ## Asynchronous Development
 
