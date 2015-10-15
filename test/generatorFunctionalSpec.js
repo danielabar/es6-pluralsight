@@ -38,7 +38,6 @@ describe('Functional generators', () => {
         return;
       }
       for(let item of items) {
-        console.log('take', item);
         yield item;
         count += 1;
         if (count >= number) {
@@ -52,7 +51,7 @@ describe('Functional generators', () => {
 
     let count = 0;
 
-    for(let employee of take(filter(company, e => e[0] === 'T')), 1) {
+    for(let employee of take(filter(company, e => e[0] === 'T'), 1)) {
       expect(employee).toBeDefined();
       count += 1;
     }

@@ -175,7 +175,7 @@ the done flag to determine if iteration is complete. It uses `Symbol.iterator` p
 ### Generators
 
 [Simple Examples](test/generatorSpec.js)
-[Functional Examples](test/generatorFunctional.js)
+[Functional Examples](test/generatorFunctionalSpec.js)
 
 A generator function is a function that generates an iterator. Uses the `yield` keywrod
 and special `function*` syntax.
@@ -206,6 +206,8 @@ Generator function exhibits _lazy evaluation_, which is very useful for function
 For example, to filter a collection...
 
 ### Comprehensions
+
+[Examples](test/comprehensionSpec.js)
 
 Comprehensions are a compact and declarative syntax for building arrays and generators.
 

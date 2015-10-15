@@ -1,4 +1,4 @@
-export class Company {
+export class SampleCompany {
 
   constructor() {
     this.employees = [];
@@ -10,7 +10,7 @@ export class Company {
 
   *[Symbol.iterator]() {
     for(let e of this.employees) {
-      // console.log(`=== Company class yielding: ${e}`);
+      console.log(`=== SampleCompany class yielding: ${e}`);
       yield e;
     }
   }
