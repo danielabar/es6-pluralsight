@@ -21,6 +21,7 @@
   - [Asynchronous Development](#asynchronous-development)
     - [Promises](#promises)
     - [Generators](#generators-1)
+  - [Objects](#objects)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -311,3 +312,18 @@ function getCompanyFromOrderId(orderId) {
 
 When a `yield` statement is encountered inside of a generator function,
 execution is paused at that point, until the yield statement returns.
+
+## Objects
+
+[Examples](test/objectSpec.js)
+
+Two new functions have been added to Object, `is`, which replaces triple equals `===`,
+with some additional edge case handling,
+
+and `assign`, which replaces the `extend` pattern seen in libraries like jQuery to provide mixin functionality.
+
+To use `is`, simply pass in two arguments to be compared:
+
+```javascript
+Object.is(1, 2); // false
+```
