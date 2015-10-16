@@ -327,3 +327,18 @@ To use `is`, simply pass in two arguments to be compared:
 ```javascript
 Object.is(1, 2); // false
 ```
+
+### Proxies
+
+[Examples](test/proxySpec.js)
+
+Proxies allow us to intercept operations performed on objects. For example, gets and sets on properties.
+
+Using a proxy object does not modify the original object, rather it creates a new object that is a wrapper
+around the original object. Therefore if you're going to use proxy objects, _must_ access object through
+proxy, and not the original object itself.
+
+Can also intercept calls to delete properties, define property function, calls to freeze or seal an object,
+when `in` operator is used, calls to `hasOwnProperty`. Can also intercept enumeration using `for...in`.
+
+To intercept more than one function on an object, add a key/value pair on the handler object.

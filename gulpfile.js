@@ -8,7 +8,8 @@ var karma = require('karma').server;
  */
 gulp.task('tdd', function (done) {
   karma.start({
-    configFile: __dirname + '/karma.conf.js'
+    configFile: __dirname + '/karma.conf.js',
+    browsers: ['Firefox']
   }, function() {
     done();
   });
