@@ -342,3 +342,5 @@ Can also intercept calls to delete properties, define property function, calls t
 when `in` operator is used, calls to `hasOwnProperty`. Can also intercept enumeration using `for...in`.
 
 To intercept more than one function on an object, add a key/value pair on the handler object.
+
+Proxies can also be used to intercept function calls.
