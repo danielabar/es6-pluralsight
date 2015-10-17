@@ -20,6 +20,7 @@
       - [Generator Comprehension](#generator-comprehension)
   - [Built-In Objects](#built-in-objects)
     - [Numbers](#numbers)
+    - [Math](#math)
   - [Asynchronous Development](#asynchronous-development)
     - [Promises](#promises)
     - [Generators](#generators-1)
@@ -280,6 +281,27 @@ New to ES6:
 
 * octal literal (leading `0o`): `var myOct = 0o71;`
 * binary literal (leading `0b`): 'var myBin = 0b1101;'
+
+### Math
+
+[Examples](test/mathSpec.js)
+
+Several new trigonometry functions are available on `Math` object.
+And also several new miscellaneous functions including cube root,
+
+`clz32`, number of leading zeroes in a 32 bit representation of the number,
+
+`log1p`, natural logarithm of the number plus 1,
+
+`hypot` (hypotenuse) takes variable number of arguments and returns the square
+root of the sum of the squares of the arguments,
+
+`fround` takes a decimal number and returns the closest value that is able to be represented
+inside of JavaScripts number system.
+
+
+`trunc` truncates off decimal portion of a number, different than `floor` because on
+positive numbers it will round down, whereas on negative numbers it rounds up.
 
 ## Asynchronous Development
 
