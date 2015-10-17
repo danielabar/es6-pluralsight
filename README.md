@@ -18,10 +18,13 @@
     - [Comprehensions](#comprehensions)
       - [Array Comprehensions](#array-comprehensions)
       - [Generator Comprehension](#generator-comprehension)
+  - [Built-In Objects](#built-in-objects)
+    - [Numbers](#numbers)
   - [Asynchronous Development](#asynchronous-development)
     - [Promises](#promises)
     - [Generators](#generators-1)
   - [Objects](#objects)
+    - [Proxies](#proxies)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -260,6 +263,23 @@ expect(Array.from(numbers2)).toEqual([1,4,9]);
 ```
 
 A lot of `for of` statements are candidates for being re-written in the comprehension syntax.
+
+## Built-In Objects
+
+### Numbers
+
+[Examples](test/numbersSpec.js)
+
+All numbers in JavaScript are stored in the `Number` type, but several different literal notations are available:
+
+* decimal: `var myDecimal = 10;`
+* hexadecimal (leading `0x`): `var myHex = 0xa;`
+* octal (leading `0`): `var myOct = 071;`
+
+New to ES6:
+
+* octal literal (leading `0o`): `var myOct = 0o71;`
+* binary literal (leading `0b`): 'var myBin = 0b1101;'
 
 ## Asynchronous Development
 
