@@ -21,11 +21,16 @@
   - [Built-In Objects](#built-in-objects)
     - [Numbers](#numbers)
     - [Math](#math)
+    - [Arrays](#arrays)
   - [Asynchronous Development](#asynchronous-development)
     - [Promises](#promises)
     - [Generators](#generators-1)
   - [Objects](#objects)
     - [Proxies](#proxies)
+  - [Modules](#modules)
+    - [IIFE](#iife)
+    - [CommonJS](#commonjs)
+    - [AMD](#amd)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -303,6 +308,10 @@ inside of JavaScripts number system.
 `trunc` truncates off decimal portion of a number, different than `floor` because on
 positive numbers it will round down, whereas on negative numbers it rounds up.
 
+### Arrays
+
+
+
 ## Asynchronous Development
 
 ### Promises
@@ -386,3 +395,98 @@ when `in` operator is used, calls to `hasOwnProperty`. Can also intercept enumer
 To intercept more than one function on an object, add a key/value pair on the handler object.
 
 Proxies can also be used to intercept function calls.
+
+## Modules
+
+Prior to ES6, there was no native module system in JavaScript, so a few different systems have been used,
+to achieve code organization and information hiding.
+
+### IIFE
+
+Immediately invoked function expression.
+
+```javascript
+(function(target) {
+
+  var privateDoWork = function(name) {
+    return name + ' is working';
+  };
+
+  var Employee = function(name) {
+    this.name = name;
+  };
+
+  Employee.prototype = {
+    doWork: function() {
+      return privateDoWork(this.name);
+    }
+  }
+
+  target.Employee = window;
+
+}(window));
+```
+
+### CommonJS
+
+Introduced with NodeJS for running JavaScript outside of a browser environment.
+Assumed environment has a file system, and its fast.
+
+No IIFE required. Uses `require` and `exports`.
+Module system executes files inside of a non-global context.
+
+```javascript
+var privateDoWork = function(name) {
+  return name + ' is working';
+};
+
+var Employee = function(name) {
+  this.name = name;
+};
+
+Employee.prototype = {
+  doWork: function() {
+    return privateDoWork(this.name);
+  }
+}
+
+// Publish the public API for this module
+exports.Employee = Employee;
+// exports.Another = SomethingElse
+```
+
+Module can be used as follows:
+
+```javascript
+var Employee = require('./Employee').Employee;
+
+var e1 = new Employee('joe');
+console.log(e1.doWork());
+```
+
+### AMD
+
+Takes into account fact that scripts need to be loaded asynchronously on the web,
+and shouldn't block the main UI thread. Also takes into account that the scripts
+need to be optimized for production, to minimize number of http requests.
+
+Most populate implementation of AMD is provided by RequireJS, which is a script loader
+that implements the AMD api. The primary keyword is `define`.
+
+```javascript
+// employee.js
+define(function() {
+
+  var privateDoWork = function() {
+    // ...
+  };
+
+  var Employee = function(name) {
+    // ...
+  };
+
+  // Public API
+  return Employee;
+
+});
+```
