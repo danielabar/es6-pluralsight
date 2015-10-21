@@ -1,4 +1,5 @@
 import {Employee, empLogger, defaultRaise, modelEmployee} from '../src/employee';
+import factory from '../src/defaultEmployee';
 
 describe('ES6 Module', () => {
 
@@ -19,6 +20,11 @@ describe('ES6 Module', () => {
 
   it('exports an object', () => {
     expect(modelEmployee.name).toEqual('Allen');
+  });
+
+  it('exports a default class', () => {
+    var e = new factory('Jane');
+    expect(e.doWork()).toEqual('Jane is working');
   });
 
 });
