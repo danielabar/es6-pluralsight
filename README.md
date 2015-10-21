@@ -31,6 +31,8 @@
     - [IIFE](#iife)
     - [CommonJS](#commonjs)
     - [AMD](#amd)
+    - [ES6 Modules](#es6-modules)
+      - [Default](#default)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -489,4 +491,56 @@ define(function() {
   return Employee;
 
 });
+```
+
+### ES6 Modules
+
+[Example Source](src/employee.js) | [Example Test](test/moduleSpec.js)
+
+Conceptually similar to above two systems in that you can export and import dependencies.
+
+```javascript
+// models/employee.js
+export class Employee {
+  constructor(name) {
+    this.name = name;
+  }
+
+  get name() {
+    return this.name;
+  }
+
+  doWork() {
+    return `${this.name} is working`;
+  }
+}
+
+// app.js
+import {Employee} from './models/employee';
+
+let e = new Employee('Scott');
+e.doWork();
+```
+
+Can `export` as many symbols as you like from a module.
+The `import` syntax is an example of [object destructuring](#destructuring).
+
+Looks closer to CommonJS than AMD. Everything in a JavaScript file that is treated as a module
+will implicitly be executed in a local context, such that no global objects are created.
+
+Note that `import` is synchronous, still need a module loader solution for use in the browser.
+
+#### Default
+
+If there's only one export, can use the default keyword, which allows the caller to import it
+without a destructuring assignment, and the variable can be named anything.
+
+```javascript
+// models/employee.js
+export default class Employee {
+  // ...
+}
+
+// app.js
+import factory from './models/employee';
 ```
