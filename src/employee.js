@@ -1,8 +1,15 @@
+// Use a Symbol to prevent direct modification of _name
+let s_name = Symbol();
+
 // export a class
 export class Employee {
 
   constructor(name) {
-    this.name = name;
+    this[s_name] = name;
+  }
+
+  get name() {
+    return this[s_name];
   }
 
   doWork() {

@@ -544,3 +544,16 @@ export default class Employee {
 // app.js
 import factory from './models/employee';
 ```
+
+#### Information Hiding
+
+Anything not explicitly exported from a module is private to that module.
+But what about class properties?
+
+Modules and Symbols can be combined to achieve information hiding.
+
+Symbol is a new built-in type in JavaScript. It can be invoked to get a new Symbol value.
+Every Symbol value is unique and can be used as a key on an object.
+
+If you don't publish Symbol value that was used to add something to an object,
+no one else will know how to get to it.

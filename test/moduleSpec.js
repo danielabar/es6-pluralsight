@@ -27,4 +27,10 @@ describe('ES6 Module', () => {
     expect(e.doWork()).toEqual('Jane is working');
   });
 
+  it('use of symbol prevents direct modification of properties', () => {
+    var e = new Employee('Tom');
+    e._name = 'Fred';
+    expect(e.name).toEqual('Tom');
+  });
+
 });
