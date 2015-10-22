@@ -10,6 +10,7 @@
     - [Rest Parameters](#rest-parameters)
     - [Spread Operator](#spread-operator)
     - [Template Literals](#template-literals)
+  - [Classes](#classes)
   - [Functional Programming](#functional-programming)
     - [Arrow Functions](#arrow-functions)
     - [Iterables and Iterators](#iterables-and-iterators)
@@ -33,6 +34,7 @@
     - [AMD](#amd)
     - [ES6 Modules](#es6-modules)
       - [Default](#default)
+      - [Information Hiding](#information-hiding)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -128,6 +130,45 @@ let url = `http://apiserver/${category}/${id}`;
 ```
 
 _Substitution placeholders_ are identified with dollar sign and curly braces wrapping a variable name.
+
+## Classes
+
+[Examples](test/classSpec.js)
+
+`class` keyword brings vocabulary of object oriented programming to JavaScript.
+
+`class` keyword creates a class definition, which is a _blueprint_ which can be used for
+creating objects, i.e. _instantiation_.
+
+### Class Versus Prototype
+
+Class is using Prototype behind the scenes:
+
+```javascript
+// constructor is capitalized by convention
+var Employee = function() {
+  // this.whatever = ...
+}
+
+// every object instatiated with Employee constructor will SHARE this function implementation
+Employee.prototype.doWork  = function() {
+  // implementation...
+}
+
+// sample usage
+var e = new Employee();
+e.doWork();
+```
+
+Equivalent using ES6 class:
+
+```javascript
+class Employee {
+  doWork() {
+    // implementation
+  }
+}
+```
 
 ## Functional Programming
 
