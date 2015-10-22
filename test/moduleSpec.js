@@ -1,5 +1,6 @@
 import {Employee, empLogger, defaultRaise, modelEmployee} from '../src/employee';
 import factory from '../src/defaultEmployee';
+import {Company} from '../src/company';
 
 describe('ES6 Module', () => {
 
@@ -31,6 +32,16 @@ describe('ES6 Module', () => {
     var e = new Employee('Tom');
     e._name = 'Fred';
     expect(e.name).toEqual('Tom');
+  });
+
+  it('can import from other modules', () => {
+    let c = new Company();
+    c.hire('Larry', 'Curly', 'Moe');
+
+    let allWork = c.doWork();
+    expect(allWork[0]).toEqual('Larry is working');
+    expect(allWork[1]).toEqual('Curly is working');
+    expect(allWork[2]).toEqual('Mo is working');
   });
 
 });
