@@ -41,7 +41,7 @@ describe('ES6 Module', () => {
     let allWork = c.doWork();
     expect(allWork[0]).toEqual('Larry is working');
     expect(allWork[1]).toEqual('Curly is working');
-    expect(allWork[2]).toEqual('Mo is working');
+    expect(allWork[2]).toEqual('Moe is working');
   });
 
 });

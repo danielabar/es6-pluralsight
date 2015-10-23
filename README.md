@@ -11,6 +11,8 @@
     - [Spread Operator](#spread-operator)
     - [Template Literals](#template-literals)
   - [Classes](#classes)
+    - [Class Versus Prototype](#class-versus-prototype)
+    - [Constructor](#constructor)
   - [Functional Programming](#functional-programming)
     - [Arrow Functions](#arrow-functions)
     - [Iterables and Iterators](#iterables-and-iterators)
@@ -44,15 +46,15 @@ Notes and code examples written in ES6, from [JavaScript Fundamentals for ES6](h
 
 ## Setup
 
-This project is setup to use Babel, JSPM and SystemJS, with Karma and Grunt to run the tests.
+This project is setup to use Babel, JSPM and SystemJS, with Karma and Gulp to run the tests.
 
 To run the code examples, clone this repo, then `cd` into project directory and:
 
 ```
 npm install
 jspm install
-npm install -g grunt-cli
-grunt tdd
+npm install -g gulp-cli
+gulp tdd
 ```
 
 ## Variables and Parameters
@@ -167,6 +169,23 @@ class Employee {
   doWork() {
     // implementation
   }
+}
+```
+
+### Constructor
+
+Managing state persistently requires initialization logic for an object,
+this can be implemented in `constructor`. This is a class member and a functin.
+It's automatically invoked on `new`.
+
+Inside constructor, implicit `this` refers to the object being constructed.
+
+```javascript
+class Employee {
+  constructor() {
+
+  }
+  // ... other functions, getters and setters
 }
 ```
 
