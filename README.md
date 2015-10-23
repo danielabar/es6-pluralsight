@@ -189,6 +189,28 @@ class Employee {
 }
 ```
 
+### Getters and Setters
+
+Use `get` and `set` keywords to provide encapsulation for object data.
+
+These keywords bind a property of an object to a function.
+A getter function will return a value and a setter function will take a parameter
+and use that to set some data in an object.
+
+This means that you can have code execute whenever the caller is reading or writing a prpoerty on an object.
+Indirection supports dynamic computed values, running validation logic, etc.
+
+```javascript
+class Employee {
+  get name() {
+    return this._name;
+  }
+  set name(newValue) {
+    this._name = newValue;
+  }
+}
+```
+
 ## Functional Programming
 
 ### Arrow Functions
