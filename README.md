@@ -445,6 +445,8 @@ function getCompanyFromOrderId(orderId) {
 
 ### Generators
 
+[Examples](test/asyncGeneratorSpec.js)
+
 When a `yield` statement is encountered inside of a generator function,
 execution is paused at that point, until the yield statement returns.
 
